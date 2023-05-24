@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="719.0" style="-fx-background-color: #FADEE1; -fx-border-color: #71ABEE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ranasia.banking.RegistrationAccountController">
+   <children>
+      <Label layoutX="187.0" layoutY="11.0" prefHeight="25.0" prefWidth="328.0" text="Customer Registration Form" textFill="#71abee">
+         <font>
+            <Font name="Dubai Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="263.0" layoutY="42.0" prefHeight="34.0" prefWidth="177.0" text="Personal Information" textFill="#71abee">
+         <font>
+            <Font name="Dubai Medium" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="68.0" prefHeight="19.0" prefWidth="439.0" text="Register for a bank account by using this form. Required fields are mnarked with an asterisk (*)" textFill="#71abee">
+         <font>
+            <Font name="Dubai Medium" size="11.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="23.0" layoutY="87.0" prefHeight="316.0" prefWidth="673.0" style="-fx-border-color: #71ABEE; -fx-background-color: transparent;">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="389.0" layoutX="146.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/earth-483978.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="148.0" layoutY="59.0" text="Username * :">
+               <font>
+                  <Font name="Dubai Regular" size="12.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="label-2" />
+                  <String fx:value="label-4" />
+               </styleClass>
+            </Label>
+            <Label layoutX="148.0" layoutY="96.0" text="Password * :">
+               <font>
+                  <Font name="Dubai Bold" size="12.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="label-2" />
+                  <String fx:value="label-4" />
+               </styleClass>
+            </Label>
+            <Label layoutX="148.0" layoutY="133.0" text="Phone Number * :">
+               <font>
+                  <Font name="Dubai Bold" size="12.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="label-2" />
+                  <String fx:value="label-4" />
+               </styleClass>
+            </Label>
+            <Label layoutX="148.0" layoutY="174.0" text="Email * :">
+               <font>
+                  <Font name="Dubai Bold" size="12.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="label-2" />
+                  <String fx:value="label-4" />
+               </styleClass>
+            </Label>
+            <PasswordField fx:id="cusPassword" layoutX="375.0" layoutY="104.0" styleClass="text-fill-registration" />
+            <TextField fx:id="cusUsername" layoutX="376.0" layoutY="67.0" styleClass="text-fill-registration" />
+            <TextField fx:id="cusPhoneNumber" layoutX="349.0" layoutY="141.0" prefHeight="27.0" prefWidth="177.0" styleClass="text-fill-registration" />
+            <TextField fx:id="cusEmail" layoutX="324.0" layoutY="182.0" prefHeight="27.0" prefWidth="202.0" styleClass="text-fill-registration" />
+            <Label fx:id="errorLabel" layoutX="68.0" layoutY="236.0" prefHeight="25.0" prefWidth="581.0" textFill="#001aff">
+               <font>
+                  <Font name="Dubai Medium" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button layoutX="544.0" layoutY="406.0" mnemonicParsing="false" onAction="#clickedDone" prefHeight="33.0" prefWidth="152.0" styleClass="button-register" text="Done" />
+      <Label layoutX="512.0" layoutY="420.0" text="2/2" textFill="#71abee">
+         <font>
+            <Font name="Dubai Medium" size="11.0" />
+         </font></Label>
+      <Button layoutX="23.0" layoutY="406.0" mnemonicParsing="false" onAction="#clickedBack" prefHeight="33.0" prefWidth="152.0" styleClass="button-register" text="Back" />
+      <ImageView fitHeight="35.0" fitWidth="136.0" layoutX="23.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Group_12_small.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

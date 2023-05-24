@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="719.0" style="-fx-background-color: #FADEE1; -fx-border-color: #71ABEE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ranasia.banking.RegisterPersonalController">
+   <children>
+      <Label layoutX="187.0" layoutY="11.0" prefHeight="25.0" prefWidth="328.0" text="Customer Registration Form" textFill="#71abee">
+         <font>
+            <Font name="Dubai Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="263.0" layoutY="42.0" prefHeight="34.0" prefWidth="177.0" text="Personal Information" textFill="#71abee">
+         <font>
+            <Font name="Dubai Medium" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="68.0" prefHeight="19.0" prefWidth="439.0" text="Register for a bank account by using this form. Required fields are marked with an asterisk (*)" textFill="#71abee">
+         <font>
+            <Font name="Dubai Medium" size="11.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="23.0" layoutY="87.0" prefHeight="316.0" prefWidth="673.0" style="-fx-border-color: #71ABEE; -fx-background-color: transparent;">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="389.0" layoutX="146.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/earth-483978.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="28.0" prefWidth="99.0" styleClass="label-2" text="First Name * :" textFill="#71abee">
+               <font>
+                  <Font name="Dubai Medium" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="231.0" layoutY="10.0" prefHeight="28.0" prefWidth="99.0" styleClass="label-2" text="Middle Initial:" textFill="#71abee">
+               <font>
+                  <Font name="Dubai Medium" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="396.0" layoutY="11.0" prefHeight="28.0" prefWidth="91.0" styleClass="label-2" text="Last Name * :" textFill="#71abee">
+               <font>
+                  <Font name="Dubai Medium" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cusFirstName" layoutX="106.0" layoutY="11.0" prefHeight="27.0" prefWidth="115.0" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Regular" size="11.0" />
+               </font></TextField>
+            <TextField fx:id="cusMiddleInitial" layoutX="330.0" layoutY="11.0" prefHeight="29.0" prefWidth="49.0" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Regular" size="11.0" />
+               </font></TextField>
+            <TextField fx:id="cusLastName" layoutX="493.0" layoutY="11.0" prefHeight="29.0" prefWidth="159.0" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Regular" size="11.0" />
+               </font></TextField>
+            <Label layoutX="10.0" layoutY="48.0" styleClass="label-2" text="SSN/ITIN*:" />
+            <Label layoutX="250.0" layoutY="48.0" styleClass="label-2" text="Date of Birth(YYYY-MM-DD):" />
+            <TextField fx:id="cusDOB" layoutX="459.0" layoutY="48.0" prefHeight="29.0" prefWidth="193.0" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Regular" size="11.0" />
+               </font></TextField>
+            <Label layoutX="10.0" layoutY="84.0" styleClass="label-2" text="Residential Address*" />
+            <TextField fx:id="cusRStreetAddress" alignment="CENTER" layoutX="11.0" layoutY="112.0" prefHeight="17.0" prefWidth="228.0" promptText="Street Address" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Regular" size="11.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="cusRCity" alignment="CENTER" layoutX="250.0" layoutY="112.0" prefHeight="17.0" prefWidth="115.0" promptText="City" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Regular" size="11.0" />
+               </font>
+            </TextField>
+            <AnchorPane layoutX="384.0" layoutY="162.0" prefWidth="99.0" />
+            <TextField fx:id="cusRZipCode" alignment="CENTER" layoutX="501.0" layoutY="111.0" prefHeight="17.0" prefWidth="152.0" promptText="Zipcode" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Medium" size="11.0" />
+               </font>
+            </TextField>
+            <Label layoutX="10.0" layoutY="150.0" styleClass="label-2" text="Is your Residential Address the same as your mailing Address?" />
+            <Label layoutX="10.0" layoutY="171.0" styleClass="label-3" text="If yes, do not enter anything in mailing address. If no, enter your mailing address.">
+               <font>
+                  <Font name="Dubai Regular" size="12.0" />
+               </font></Label>
+            <Label layoutX="10.0" layoutY="228.0" styleClass="label-2" text="Mailing Address *" />
+            <Label layoutX="377.0" layoutY="111.0" styleClass="label-2" text="State:" />
+            <ComboBox fx:id="cusRState" layoutX="427.0" layoutY="113.0" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #FFFFFF;" />
+            <RadioButton fx:id="yesButton" layoutX="14.0" layoutY="201.0" mnemonicParsing="false" text="Yes">
+               <toggleGroup>
+                  <ToggleGroup fx:id="sameMailingAddress" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="noButton" layoutX="70.0" layoutY="201.0" mnemonicParsing="false" text="No" toggleGroup="$sameMailingAddress" />
+            <TextField fx:id="cusMStreetAddress" alignment="CENTER" layoutX="10.0" layoutY="259.0" prefHeight="17.0" prefWidth="228.0" promptText="Street Address" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Regular" size="11.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="cusMCity" alignment="CENTER" layoutX="249.0" layoutY="259.0" prefHeight="17.0" prefWidth="115.0" promptText="City" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Regular" size="11.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="cusMZipcode" alignment="CENTER" layoutX="501.0" layoutY="258.0" prefHeight="17.0" prefWidth="152.0" promptText="Zipcode" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Medium" size="11.0" />
+               </font>
+            </TextField>
+            <Label layoutX="377.0" layoutY="258.0" styleClass="label-2" text="State:" />
+            <ComboBox fx:id="cusMState" layoutX="426.0" layoutY="260.0" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #FFFFFF;" />
+            <Label fx:id="errorDateLabel" layoutX="251.0" layoutY="80.0" prefHeight="25.0" prefWidth="274.0" textFill="#001aff">
+               <font>
+                  <Font name="Dubai Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cusSSN" layoutX="103.0" layoutY="48.0" prefHeight="29.0" prefWidth="136.0" styleClass="text-fill-registration">
+               <font>
+                  <Font name="Dubai Regular" size="11.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <Button layoutX="544.0" layoutY="406.0" mnemonicParsing="false" onAction="#clickedNext" prefHeight="33.0" prefWidth="152.0" styleClass="button-register" text="Next" />
+      <Label layoutX="516.0" layoutY="420.0" text="1/2" textFill="#71abee">
+         <font>
+            <Font name="Dubai Medium" size="11.0" />
+         </font></Label>
+      <Button layoutX="23.0" layoutY="406.0" mnemonicParsing="false" onAction="#clickedCancel" prefHeight="33.0" prefWidth="152.0" styleClass="button-register" text="Cancel" />
+      <ImageView fitHeight="35.0" fitWidth="136.0" layoutX="23.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Group_12_small.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="180.0" layoutY="413.0" prefHeight="25.0" prefWidth="328.0" textFill="#001aff">
+         <font>
+            <Font name="Dubai Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
