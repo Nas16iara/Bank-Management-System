@@ -1,6 +1,7 @@
 package com.ranasia.banking;
 
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +24,8 @@ import static com.ranasia.banking.ValidateData.*;
 
 public class RegisterPersonalController implements Initializable {
 
+
+    public Button canceledButton;
     @FXML
     private TextField cusFirstName;
     @FXML
@@ -92,7 +95,18 @@ public class RegisterPersonalController implements Initializable {
 
 
     public void clickedNext(ActionEvent actionEvent) {
+        boolean isValid = validateInformation();
+        if(isValid) {
+            nextRegisterForm();
+        }
+    }
 
+    public void clickedCancel(ActionEvent actionEvent) {
+        Stage stage = (Stage) canceledButton.getScene().getWindow();
+        stage.close();
+        Platform.exit();
+    }
+    public boolean validateInformation(){
         //Set the text to original state when next is entered then checks again
 
         errorLabel.setText("");
@@ -112,7 +126,7 @@ public class RegisterPersonalController implements Initializable {
         if(cusFirstName.getText().isBlank() || cusFirstName.getText().length() > 255){
             errorLabel.setText("Error: First Name is longer than 255 or Blank");
             cusFirstName.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else{
             firstName = cusFirstName.getText();
@@ -122,7 +136,7 @@ public class RegisterPersonalController implements Initializable {
         if(!(cusMiddleInitial.getText().isBlank()) && (cusMiddleInitial.getText().length() != 1 ||!(isLetter(cusMiddleInitial.getText().toUpperCase())))){
             errorLabel.setText("Error: Middle Initial should be 1 letter");
             cusMiddleInitial.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else if(!(cusMiddleInitial.getText().isBlank())){
             middleInitial = cusMiddleInitial.getText().toUpperCase();
@@ -132,7 +146,7 @@ public class RegisterPersonalController implements Initializable {
         if(cusLastName.getText().isBlank() || cusLastName.getText().length() > 255){
             errorLabel.setText("Error: Last Name is longer than 255 or Blank");
             cusLastName.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else{
             lastName = cusLastName.getText();
@@ -144,13 +158,13 @@ public class RegisterPersonalController implements Initializable {
         if(cusSSN.getText().isBlank()){
             errorLabel.setText("SSN/ITIN is blank");
             cusSSN.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else if(!isValidFormat(cusSSN.getText(),false)){
             errorLabel.setText("SSN/ITIN is enter incorrectly");
             errorDateLabel.setText("Format is ###-##-####");
             cusSSN.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else{
             ssn = cusSSN.getText();
@@ -164,17 +178,17 @@ public class RegisterPersonalController implements Initializable {
             errorLabel.setText("Date is formatted incorrectly or Blank");
             errorDateLabel.setText("Format is YYYY-MM-DD");
             cusSSN.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else if (!isValidDate(cusDOB.getText())) {
             errorLabel.setText("This is not a valid date");
             cusSSN.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else if(!isOver18(cusDOB.getText())) {
             errorLabel.setText("Your not over 18");
             cusDOB.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else{
             dateOfBirth = cusDOB.getText();
@@ -188,7 +202,7 @@ public class RegisterPersonalController implements Initializable {
         if(cusRStreetAddress.getText().isBlank() || cusRStreetAddress.getText().length() > 255){
             errorLabel.setText("Error: Street Address is longer than 255 or Blank");
             cusRStreetAddress.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else {
             streetAddressR = cusRStreetAddress.getText();
@@ -198,7 +212,7 @@ public class RegisterPersonalController implements Initializable {
         if(cusRCity.getText().isBlank() || cusRCity.getText().length() > 255){
             errorLabel.setText("Error: Residential City Address is longer than 255 or Blank");
             cusLastName.setBorder(Border.stroke(Color.rgb(255,0,0)));
-            return;
+            return false;
         }
         else{
             cityR = cusRCity.getText();
@@ -210,7 +224,7 @@ public class RegisterPersonalController implements Initializable {
         if(cusRZipCode.getText().isBlank() || !(isValidZipCode(cusRZipCode.getText()))){
             errorLabel.setText("Error: Residential Zipcode Address is blank or Incorrect");
             cusRZipCode.setBorder(Border.stroke(Color.rgb(225,0,0)));
-            return;
+            return false;
         }
         else{
             zipcodeR = cusRZipCode.getText();
@@ -228,7 +242,7 @@ public class RegisterPersonalController implements Initializable {
         }
         else if(!yesButton.isSelected() && !noButton.isSelected()){
             errorLabel.setText("Please select yes or no");
-            return;
+            return false;
         }
         else if(noButton.isSelected()){
             errorLabel.setText("");
@@ -236,7 +250,7 @@ public class RegisterPersonalController implements Initializable {
             if (cusMStreetAddress.getText().isBlank() || cusMStreetAddress.getText().length() > 255) {
                 errorLabel.setText("Error: Street Address is longer than 255 or Blank");
                 cusMStreetAddress.setBorder(Border.stroke(Color.rgb(255, 0, 0)));
-                return;
+                return false;
             } else {
                 streetAddressM = cusMStreetAddress.getText();
                 errorLabel.setText("");
@@ -245,7 +259,7 @@ public class RegisterPersonalController implements Initializable {
             if (cusMCity.getText().isBlank() || cusMCity.getText().length() > 255) {
                 errorLabel.setText("Error: Mailing City Address is longer than 255 or Blank");
                 cusMCity.setBorder(Border.stroke(Color.rgb(255, 0, 0)));
-                return;
+                return false;
             } else {
                 cityM = cusMCity.getText();
                 errorLabel.setText("");
@@ -256,25 +270,15 @@ public class RegisterPersonalController implements Initializable {
             if (cusMZipcode.getText().isBlank() || !(isValidZipCode(cusMZipcode.getText()))) {
                 errorLabel.setText("Error: Mailing Zipcode Address is blank or Incorrect");
                 cusMZipcode.setBorder(Border.stroke(Color.rgb(225, 0, 0)));
-                return;
+                return false;
             } else {
                 zipcodeM = cusMZipcode.getText();
                 errorLabel.setText("");
             }
             errorLabel.setText("");
         }
-        nextRegisterForm();
-        System.out.println(firstName + "|" + middleInitial + "|" + lastName + "|");
-        System.out.println(ssn + "|" + dateOfBirth + "|");
-        System.out.println(streetAddressR + "|" + cityR + "|" + stateR + "|" + zipcodeR);
-        System.out.println(streetAddressM + "|" + cityM + "|" + stateM + "|" + zipcodeM);
-        System.out.println("_________________________________________________________________");
+        return true;
     }
-
-    public void clickedCancel(ActionEvent actionEvent) {
-
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
        cusMState.setItems(listStates);
@@ -285,6 +289,9 @@ public class RegisterPersonalController implements Initializable {
         accountController.getPersonalInformation(firstName,middleInitial,lastName,dateOfBirth,ssn,
                 streetAddressR,cityR,stateR,zipcodeR,streetAddressM,cityM,stateM,zipcodeM);
         try {
+            Stage stage = (Stage) canceledButton.getScene().getWindow();
+            stage.close();
+            Platform.exit();
             Parent root = FXMLLoader.load(getClass().getResource("registerAccountForms.fxml"));
             Stage registerStage2 = new Stage();
             registerStage2.initStyle(StageStyle.UNDECORATED);

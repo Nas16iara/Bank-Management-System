@@ -127,7 +127,7 @@
          <font>
             <Font name="Dubai Medium" size="11.0" />
          </font></Label>
-      <Button layoutX="23.0" layoutY="406.0" mnemonicParsing="false" onAction="#clickedCancel" prefHeight="33.0" prefWidth="152.0" styleClass="button-register" text="Cancel" />
+      <Button fx:id="canceledButton" layoutX="23.0" layoutY="406.0" mnemonicParsing="false" onAction="#clickedCancel" prefHeight="33.0" prefWidth="152.0" styleClass="button-register" text="Cancel" />
       <ImageView fitHeight="35.0" fitWidth="136.0" layoutX="23.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/Group_12_small.png" />
