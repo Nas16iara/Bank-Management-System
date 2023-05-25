@@ -1,0 +1,54 @@
+.left-side-pink{
+    -fx-background-color: #FADEE1;
+}
+.background-login{
+    -fx-background-color: #71ABEE;
+}
+.button{
+    -fx-background-color: #FADEE1;
+    -fx-text-fill: #71ABEE;
+    -fx-font-family : "dubai";
+    -fx-font-size : 12pt;
+}
+.button-register{
+    -fx-background-color: #71ABEE;
+    -fx-text-fill: #FADEE1;
+    -fx-font-family : "dubai";
+    -fx-font-size : 10pt;
+}
+.text-fill-registration{
+    -fx-border-color: #71ABEE;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+.label-1{
+    -fx-text-fill: #FADEE1;
+    -fx-font-family : "dubai";
+    -fx-font-size : 15pt;
+}
+.label-2{
+    -fx-text-fill: #71ABEE;
+    -fx-font-family : "dubai";
+    -fx-font-size : 12pt;
+}
+.label-3{
+    -fx-text-fill: #71ABEE;
+    -fx-font-family : "dubai";
+    -fx-font-size : 10pt;
+}
+.label-4{
+     -fx-text-fill: #71ABEE;
+     -fx-font-family : "dubai";
+     -fx-font-size : 20pt;
+}
+
+.label-error{
+    -fx-text-fill: #001AFF;
+    -fx-font-family : "dubai";
+    -fx-font-size : 13pt;
+}
+.text-fill-password-fill{
+    -fx-border-style : solid solid solid solid;
+    -fx-border-color : transparent transparent #FADEE1 transparent;
+    -fx-background-color : #71ABEE;
+}
