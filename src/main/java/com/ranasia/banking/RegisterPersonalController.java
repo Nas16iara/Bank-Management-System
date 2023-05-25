@@ -14,7 +14,6 @@ import javafx.scene.layout.Border;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -282,7 +281,9 @@ public class RegisterPersonalController implements Initializable {
        cusRState.setItems(listStates);
     }
     public void nextRegisterForm()  {
-
+        RegistrationAccountController accountController = new RegistrationAccountController();
+        accountController.getPersonalInformation(firstName,middleInitial,lastName,dateOfBirth,ssn,
+                streetAddressR,cityR,stateR,zipcodeR,streetAddressM,cityM,stateM,zipcodeM);
         try {
             Parent root = FXMLLoader.load(getClass().getResource("registerAccountForms.fxml"));
             Stage registerStage2 = new Stage();
@@ -296,49 +297,4 @@ public class RegisterPersonalController implements Initializable {
         }
     }
 
-
-
-    //Getters
-
-    public String getFirstName() {
-        return firstName;
-    }
-    public String getMiddleInitial() {
-        return middleInitial;
-    }
-    public String getLastName() {
-        return lastName;
-    }
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-    public String getSsn() {
-        return ssn;
-    }
-    public String getStreetAddressR() {
-        return streetAddressR;
-    }
-    public String getCityR() {
-        return cityR;
-    }
-    public String getStateR() {
-        return stateR;
-    }
-    public String getZipcodeR() {
-        return zipcodeR;
-    }
-    public String getStreetAddressM() {
-        return streetAddressM;
-    }
-    public String getCityM() {
-        return cityM;
-    }
-
-    public String getStateM() {
-        return stateM;
-    }
-
-    public String getZipcodeM() {
-        return zipcodeM;
-    }
 }
