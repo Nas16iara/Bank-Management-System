@@ -285,14 +285,11 @@ public class RegisterPersonalController implements Initializable {
        cusRState.setItems(listStates);
     }
     public void nextRegisterForm()  {
-        RegistrationAccountController accountController = new RegistrationAccountController();
-        accountController.getPersonalInformation(firstName,middleInitial,lastName,dateOfBirth,ssn,
+        RegistrationAccountController2 accountController = new RegistrationAccountController2();
+        accountController.setPersonalInformation(firstName,middleInitial,lastName,dateOfBirth,ssn,
                 streetAddressR,cityR,stateR,zipcodeR,streetAddressM,cityM,stateM,zipcodeM);
         try {
-            Stage stage = (Stage) canceledButton.getScene().getWindow();
-            stage.close();
-            Platform.exit();
-            Parent root = FXMLLoader.load(getClass().getResource("registerAccountForms.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("registerAccountForms2.fxml"));
             Stage registerStage2 = new Stage();
             registerStage2.initStyle(StageStyle.UNDECORATED);
             registerStage2.setScene(new Scene(root,700,500));

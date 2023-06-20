@@ -47,10 +47,15 @@
                <image>
                   <Image url="@Images/Group_12.png" />
                </image></ImageView>
-            <ImageView fitHeight="100.0" fitWidth="153.0" layoutX="57.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="100.0" fitWidth="153.0" layoutX="57.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Group_11.png" />
                </image></ImageView>
+            <Button fx:id="registerButton" layoutX="46.0" layoutY="324.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="39.0" prefWidth="184.0" style="-fx-background-color: #71abee;" styleClass="button-register" text="Register" textFill="#fadee1">
+               <font>
+                  <Font name="Dubai Bold" size="12.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
    </children>
 </AnchorPane>

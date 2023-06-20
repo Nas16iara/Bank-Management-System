@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="719.0" style="-fx-background-color: #FADEE1; -fx-border-color: #71ABEE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ranasia.banking.RegistrationAccountController">
+<AnchorPane prefHeight="450.0" prefWidth="719.0" style="-fx-background-color: #FADEE1; -fx-border-color: #71ABEE;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ranasia.banking.RegistrationAccountController2">
    <children>
       <Label layoutX="187.0" layoutY="11.0" prefHeight="25.0" prefWidth="328.0" text="Customer Registration Form" textFill="#71abee">
          <font>
@@ -39,6 +39,7 @@
                   <String fx:value="label-4" />
                </styleClass>
             </Label>
+            <TextField fx:id="cusUsername" layoutX="376.0" layoutY="67.0" styleClass="text-fill-registration" />
             <Label layoutX="135.0" layoutY="91.0" text="Password * :">
                <font>
                   <Font name="Dubai Bold" size="12.0" />
@@ -48,33 +49,7 @@
                   <String fx:value="label-4" />
                </styleClass>
             </Label>
-            <Label layoutX="135.0" layoutY="175.0" text="Phone Number * :">
-               <font>
-                  <Font name="Dubai Bold" size="12.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="label-2" />
-                  <String fx:value="label-4" />
-               </styleClass>
-            </Label>
-            <Label layoutX="135.0" layoutY="216.0" text="Email * :">
-               <font>
-                  <Font name="Dubai Bold" size="12.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="label-2" />
-                  <String fx:value="label-4" />
-               </styleClass>
-            </Label>
             <PasswordField fx:id="cusPassword" layoutX="375.0" layoutY="104.0" styleClass="text-fill-registration" />
-            <TextField fx:id="cusUsername" layoutX="376.0" layoutY="67.0" styleClass="text-fill-registration" />
-            <TextField fx:id="cusPhoneNumber" layoutX="349.0" layoutY="188.0" prefHeight="27.0" prefWidth="177.0" styleClass="text-fill-registration" />
-            <TextField fx:id="cusEmail" layoutX="324.0" layoutY="229.0" prefHeight="27.0" prefWidth="202.0" styleClass="text-fill-registration" />
-            <Label fx:id="errorLabel" layoutX="65.0" layoutY="269.0" prefHeight="25.0" prefWidth="581.0" textFill="#001aff">
-               <font>
-                  <Font name="Dubai Medium" size="13.0" />
-               </font>
-            </Label>
             <Label layoutX="133.0" layoutY="134.0" text="Confirm Password* :">
                <font>
                   <Font name="Dubai Bold" size="12.0" />
@@ -85,10 +60,35 @@
                </styleClass>
             </Label>
             <PasswordField fx:id="confirmPassword" layoutX="375.0" layoutY="147.0" styleClass="text-fill-registration" />
+            <Label layoutX="135.0" layoutY="175.0" text="Phone Number * :">
+               <font>
+                  <Font name="Dubai Bold" size="12.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="label-2" />
+                  <String fx:value="label-4" />
+               </styleClass>
+            </Label>
+            <TextField fx:id="cusPhoneNumber" layoutX="349.0" layoutY="188.0" prefHeight="27.0" prefWidth="177.0" styleClass="text-fill-registration" />
+            <Label layoutX="135.0" layoutY="216.0" text="Email * :">
+               <font>
+                  <Font name="Dubai Bold" size="12.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="label-2" />
+                  <String fx:value="label-4" />
+               </styleClass>
+            </Label>
+            <TextField fx:id="cusEmail" layoutX="324.0" layoutY="229.0" prefHeight="27.0" prefWidth="202.0" styleClass="text-fill-registration" />
+            <Label fx:id="errorLabel" layoutX="65.0" layoutY="269.0" prefHeight="25.0" prefWidth="581.0" textFill="#001aff">
+               <font>
+                  <Font name="Dubai Medium" size="13.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <Button layoutX="544.0" layoutY="406.0" mnemonicParsing="false" onAction="#clickedDone" prefHeight="33.0" prefWidth="152.0" styleClass="button-register" text="Done" />
-      <Label layoutX="512.0" layoutY="420.0" text="2/2" textFill="#71abee">
+      <Button layoutX="544.0" layoutY="406.0" mnemonicParsing="false" onAction="#clickedDone" prefHeight="33.0" prefWidth="152.0" styleClass="button-register" text="Next" />
+      <Label layoutX="512.0" layoutY="420.0" text="2/3" textFill="#71abee">
          <font>
             <Font name="Dubai Medium" size="11.0" />
          </font></Label>
